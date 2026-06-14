@@ -67,33 +67,42 @@ header.wp-block-group.alignfull {
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
-    gap: 40px !important;
+    gap: 60px !important;
 }
 
 .wp-block-navigation-item a {
-    color: var(--brand-white) !important;
+    color: var(--brand-accent) !important;
     font-weight: 500;
     font-size: 1.1rem;
     text-decoration: none !important;
     letter-spacing: 0.02em;
     text-transform: none;
     font-family: "Montserrat", sans-serif !important;
+    transition: color 0.3s ease !important;
 }
 
 .wp-block-navigation-item a:hover {
-    color: var(--brand-accent) !important;
+    color: var(--brand-white) !important;
 }
 
 /* Dropdown Caret Color & Positioning */
 .wp-block-navigation-submenu__toggle {
     gap: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
 }
 
 .wp-block-navigation-submenu__toggle svg {
-    fill: var(--brand-white) !important;
+    fill: var(--brand-accent) !important;
     width: 12px !important;
     height: 12px !important;
     margin-top: 2px;
+    transition: fill 0.3s ease !important;
+}
+
+.wp-block-navigation-item:hover .wp-block-navigation-submenu__toggle svg {
+    fill: var(--brand-white) !important;
 }
 
 /* Dropdown Submenu Styling */
@@ -103,14 +112,14 @@ header.wp-block-group.alignfull {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
     padding: 15px 0 !important;
     border: none !important;
-    margin-top: 10px !important;
+    margin-top: 15px !important;
 }
 
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a {
     color: var(--brand-primary) !important;
     padding: 10px 25px !important;
     font-size: 1.05rem !important;
-    font-weight: 400;
+    font-weight: 500 !important;
 }
 
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:hover {
@@ -142,6 +151,11 @@ header.wp-block-group.alignfull {
  * --------------------------------------------------------- */
 
 @media (max-width: 980px) {
+    header.wp-block-group.alignfull {
+        padding: 15px 20px !important;
+        top: 0 !important;
+    }
+
     /* 1. Force burger icon display */
     .wp-block-navigation__responsive-container-open {
         display: flex !important;
@@ -156,8 +170,8 @@ header.wp-block-group.alignfull {
     }
     
     .wp-block-navigation__responsive-container-open svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 30px !important;
+        height: 30px !important;
         fill: currentColor !important;
     }
 
@@ -170,20 +184,47 @@ header.wp-block-group.alignfull {
     .wp-block-navigation__responsive-container.is-menu-open {
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
+        justify-content: center !important;
+        align-items: center !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        background-color: var(--wp--preset--color--background, #ffffff) !important;
-        background: var(--wp--preset--color--background, #ffffff) !important;
+        background-color: var(--brand-primary) !important;
         padding: 2rem !important;
         box-sizing: border-box !important;
         z-index: 100000 !important;
-        overflow-y: auto !important;
-        animation: fadeInOverlay 0.3s ease-out forwards;
+    }
+
+    .wp-block-navigation__responsive-container-close {
+        position: absolute !important;
+        top: 25px !important;
+        right: 25px !important;
+        color: var(--brand-white) !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item a {
+        font-size: 1.5rem !important;
+        color: var(--brand-white) !important;
+    }
+
+    /* Hide buttons on mobile header if they clutter */
+    .wp-block-buttons {
+        display: none;
+    }
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
     }
 
     /* 4. Overlay exit / close button */
