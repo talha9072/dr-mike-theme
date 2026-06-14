@@ -1,6 +1,26 @@
-<!-- wp:group {"tagName":"header","align":"full","layout":{"type":"flex","justifyContent":"space-between"}} -->
-<header class="wp-block-group alignfull">
-	<!-- wp:site-logo {"width":120} /-->
-	<!-- wp:navigation /-->
+<!-- wp:group {"tagName":"header","align":"full","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"},"style":{"spacing":{"padding":{"top":"20px","right":"40px","bottom":"20px","left":"40px"}}}} -->
+<header class="wp-block-group alignfull" style="padding-top:20px;padding-right:40px;padding-bottom:20px;padding-left:40px">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+	<div class="wp-block-group">
+		<!-- wp:site-logo {"width":220} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"center"},"style":{"typography":{"fontWeight":"500"}},"fontSize":"medium"} -->
+		<!-- wp:navigation-link {"label":"Home","url":"#","kind":"custom","isTopLevelLink":true} /-->
+		<!-- wp:navigation-submenu {"label":"Services","url":"#","kind":"custom"} -->
+			<!-- wp:navigation-link {"label":"Knee Surgery","url":"#","kind":"custom"} /-->
+			<!-- wp:navigation-link {"label":"Hip Surgery","url":"#","kind":"custom"} /-->
+		<!-- /wp:navigation-submenu -->
+		<!-- wp:navigation-link {"label":"About Us","url":"#","kind":"custom","isTopLevelLink":true} /-->
+	<!-- /wp:navigation -->
+
+	<!-- wp:buttons -->
+	<div class="wp-block-buttons">
+		<!-- wp:button {"backgroundColor":"header-btn","style":{"border":{"radius":"30px"},"spacing":{"padding":{"top":"12px","right":"35px","bottom":"12px","left":"35px"}},"typography":{"fontWeight":"600"}}} -->
+		<div class="wp-block-button"><a class="wp-block-button__link has-header-btn-background-color has-background wp-element-button" style="border-radius:30px;font-weight:600;padding-top:12px;padding-right:35px;padding-bottom:12px;padding-left:35px">Contact Us</a></div>
+		<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
 </header>
 <!-- /wp:group -->
